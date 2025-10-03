@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+   
+        <!-- link di importazione CDN di Bootstrap   -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <!-- link di importazione css personalizzato, da inserire sempre sotto a bootstrap   -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--favicon.ico ovvero l icona della pagina del browser-->
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg">
+    <!-- link di importazione icone FONT AWESOME  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- importazione google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body class="text-white">
+<!---->
+    <div class="container-fluid vh-100 d-flex flex-column">
+        
+        <nav class="navbar navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo.png" alt="Logo" height="30">
+                </a>
+
+                <button class="btn btn-outline-light d-md-none" 
+                        type="button" 
+                        data-bs-toggle="offcanvas" 
+                        data-bs-target="#sidebarOffCanvas">
+
+               <i class="fas fa-bars"></i>
+            </button>
+            </div>
+        </nav>
+
+
+ 
+
+
+        <div class="row flex">
+
+            <!--sidebar desktop-->
+            <aside class="col-2 bg-dark flex-column justify-content-between p-3 d-none d-md-flex position-fixed top-0 bottom-0" style="width: 220px; margin-top: 50px">
+                <div>
+                    <img src="./img/icons.png" class="image-fluid mb-3 d-none d-md-block" alt="Logo" height="25">
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-magnifying-glass me-2"></i><span>Cerca</span></a></li>
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-home me-2"></i><span>Home</span></a></li>
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-music me-2"></i><span>La tua libreria</span></a></li>
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-list me-2"></i><span>Playlist</span></a></li>
+                    </ul>
+                    <h6 class="text-uppercase">Ascoltati di recente</h6>
+                    <ul class="list-unstyled">
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">green day <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">883 <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">Linkin park <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">Negramaro <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+
+                    <div class="mb-2"><i class="fa-solid fa-plus"></i>Nuova Playlist</div>
+                    <div class="mb-2"><i class="fa-solid fa-mobile-screen-button"></i>Installa App</div>
+                    <div><i class="fa-solid fa-user"></i>Step</div>
+
+                </div>
+            </aside>
+            -->
+
+
+
+            <!--sidebar Mobile // Offcanvas  SIDEBAR (IDENTICA A QUELLA VERSIONE DESKTOP) per mobile  (offcanvas-start = apre da sinistra ((end->destra))) al click del btn hb(hamburgher menu)-->
+            <div class="offcanvas d-lg-flex offcanvas-start bg-black text-white" tabindex="-1" id="sidebarOffCanvas">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                    <img src="./img/icons.png" class="image-fluid mb-3  d-md-block" alt="Logo" height="25">
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-magnifying-glass me-2"></i><span>Cerca</span></a></li>
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-home me-2"></i><span>Home</span></a></li>
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-music me-2"></i><span>La tua libreria</span></a></li>
+                        <li class="mb-3"><a class="text-white d-flex align-items-center text-decoration-none" href="#"><i class="fa-solid fa-list me-2"></i><span>Playlist</span></a></li>
+                    </ul>
+                    <h6 class="text-uppercase">Ascoltati di recente</h6>
+                    <ul class="list-unstyled">
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">Green day <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">883 <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">Linkin park <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                        <li class="mt-3"><a href="#" class="text-white text-decoration-none">Negramaro <span class="d-block small text-uppercase">ARTIST</span></a></li>
+                    </ul>
+                </div>
+                </div>
+            </div> -->
+
+
+            <!--main-->
+            <main class="col bg-gradient1 p-4 overflow-auto" style="margin-left: 220px; padding-top: 70px; margin-top: 55px;">
+
+                <h1 class="fw-bold">Naviga</h1>
+
+                <div class="d-flex flex-wrap gap-3 text-uppercase my-3">
+                    <a href="#panoramica" class="text-white">Panoramica</a>
+                    <a href="#podcast" class="text-white">Podcast</a>
+                    <a href="#classifiche" class="text-white">Classifiche</a>
+                    <a href="#genmood" class="text-white">Generi e mood</a>
+                    <a href="#new" class="text-white">Nuove Uscite</a>
+                    <a href="#piu" class="text-white">Più</a>
+                </div>
+
+
+                <!--Panoramica card-->
+                <section id="panoramica" class="mb-5">
+                    <h2 class="fw-bold border-bottom border-secondary pb-2">Panoramica</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 mt-3">
+
+                        <!--colonne-->
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        
+                    </div>  
+
+                </section>
+                <!--Podcast card-->
+                <section id="podcast" class="mb-5">
+                    <h2 class="fw-bold border-bottom border-secondary pb-2">Podcast</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 mt-3">
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        
+                    </div>  
+
+                </section>
+                <!--Classifiche card-->
+                <section id="classifiche" class="mb-5">
+                    <h2 class="fw-bold border-bottom border-secondary pb-2">Classifiche</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 mt-3">
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                   </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                   </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                   </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                   </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        
+                    </div>  
+
+                </section>
+                <!--Generi e mood card-->
+                <section id="genmood" class="mb-5">
+                    <h2 class="fw-bold border-bottom border-secondary pb-2">Generi e mood</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 mt-3">
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                   </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        
+                    </div>  
+
+                </section>
+                <!--Nuove Uscite card-->
+                <section id="new" class="mb-5">
+                    <h2 class="fw-bold border-bottom border-secondary pb-2">Nuove uscite</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 mt-3">
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+
+
+
+
+                                <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+
+
+
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                   <div class="play_icon position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-play fa-2x text-white"></i>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        
+                    </div>  
+
+                </section>
+                <!--Più card-->
+                <section id="piu" class="mb-5">
+                    <h2 class="fw-bold border-bottom border-secondary pb-2">Più</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 mt-3">
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        <div class="col">
+                            <div class="card bg-dark text-white h-100">
+                                <img src="./img/va.jfif" alt="" class="card-img-top">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Daily Mix</h6>
+                                    <p class="small ">Various Artist, Rock and more...</p>
+                                </div>
+                            </div>                    
+                        </div>  
+
+                        
+                    </div>  
+
+                </section>
+            </main>
+        </div>
+
+
+
+        <footer class="row bg-dark text-white py-3 align-items-center fixed-bottom">
+            <div class="col-4 d-flex align-items-center">
+                <img class="me-2" src="https://picsum.photos/40/40" alt="immagine player">
+                <div>
+                    <div>Gorillaz</div>
+                    <small>Feel Good Inc</small>
+                </div>
+                <a href="#" class="ms-3 text-white"><i class="fas fa-plus"></i></a>
+            </div>
+
+            <div class="col-4 align-items-center">
+                <div class="d-flex justify-content-center gap-3 mb-2">
+                    <a href="#" class="text-white"><i class="fa-solid fa-shuffle"></i></a>
+                    <a href="#" class="text-white"><i class="fa-solid fa-backward-step"></i></a>
+                    <a href="#" class=" btn btn-outline-light rounded-circle"><i class="fa-solid fa-play"></i></a>
+                    <a href="#" class="text-white"><i class="fa-solid fa-forward-step"></i></a>
+                    <a href="#" class="text-white"><i class="fa-solid fa-rotate-right"></i></a>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <span>4:16</span>
+                    <div class="progress flex-grow-1" style="max-width: 200px; height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 60%;"></div>
+                    </div>
+                    <span>6:34</span>
+                </div>
+            </div>
+
+            <div class="col-4 align-items-center">
+                <div class="d-flex justify-content-end gap-3 mb-2 me-4">
+                    <a href="#" class="text-white"><i class="fa-solid fa-bars"></i></a>
+                    <a href="#" class="text-white"><i class="fa-solid fa-desktop"></i></a>
+                    <a href="#" class="text-white"><i class="fa-solid fa-volume-high"></i></a>
+                </div>
+
+                <div class="d-flex justify-content-end align-items-center gap-3 me-4">
+                    <div class="progress flex-grow-1" style="max-width: 100px; height: 8px;">
+                        <div class="progress-bar bg-success " style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
